@@ -25,10 +25,10 @@ function Login() {
       });
       const data = await response.json();
       console.log('logindone', data);
-      if (data.success) {
+      if (data) {
         Cookies.set('jwt', data.token, { expires: 30 });
         navigate('/homepage');
-        window.location.href = '/homepage'; 
+        // window.location.href = '/homepage'; 
         // console.log(data.success)
       }
     } catch (error) {
